@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>BiblioWeb - Ma bibliothèque</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- EN-TÊTE -->
+    <header>
+      <h1>BiblioWeb</h1>
+
+      <nav>
+        <a href="#catalogue">Catalogue</a>
+        <a href="#apropos">À propos</a>
+      </nav>
+
+      <button id="theme-btn" type="button">Mode sombre</button>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main>
+      <section id="catalogue">
+        <h2>Découvrez notre catalogue</h2>
+
+        <p>Recherchez vos livres préférés parmi des milliers d'ouvrages.</p>
+
+        <!-- FORMULAIRE DE RECHERCHE -->
+        <form id="form-recherche">
+          <label for="recherche"> Titre, auteur ou sujet : </label>
+
+          <input type="search" id="recherche" value="programmation" required />
+
+          <button type="submit">🔍 Rechercher</button>
+        </form>
+
+        <!-- MESSAGE DE STATUT -->
+        <div id="statut" role="status" aria-live="polite" hidden></div>
+
+        <!-- BOUTON POUR RÉESSAYER -->
+        <button id="retry-btn" type="button" hidden>Réessayer</button>
+
+        <!-- RÉSULTATS -->
+        <div id="grille"></div>
+
+        <!-- PAGINATION -->
+        <div id="pagination">
+          <button id="precedent" type="button" disabled>← Précédent</button>
+
+          <span id="numero-page">Page 1</span>
+
+          <button id="suivant" type="button">Suivant →</button>
+        </div>
+
+        <!-- FAVORIS -->
+        <section id="section-favoris">
+          <h2>Mes livres favoris</h2>
+
+          <button id="favoris-btn" type="button">Afficher mes favoris</button>
+
+          <div id="grille-favoris" hidden></div>
+        </section>
+      </section>
+
+      <!-- À PROPOS -->
+      <section id="apropos">
+        <h2>À propos de BiblioWeb</h2>
+
+        <p>
+          BiblioWeb est une application web permettant de rechercher des livres
+          grâce à l'API publique Open Library.
+        </p>
+      </section>
+    </main>
+
+    <!-- PIED DE PAGE -->
+    <footer>
+      <p>© 2026 BiblioWeb - Tous droits réservés.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
